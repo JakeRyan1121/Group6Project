@@ -13,10 +13,17 @@ public class Car {
 	private double profit;
 
 	/**
-	 * Default constructor.
+	 * Default constructor that initializes a car with default values.
 	 */
 	public Car() {
-		// Initializes to default values.
+		this.id = "";
+		this.mileage = 0;
+		this.mpg = 0;
+		this.cost = 0.0;
+		this.salesPrice = 0.0;
+		this.sold = false;
+		this.priceSold = 0.0;
+		this.profit = 0.0;
 	}
 
 	/**
@@ -33,28 +40,49 @@ public class Car {
 		this.mpg = mpg;
 		this.cost = cost;
 		this.salesPrice = salesPrice;
+		this.sold = false;  // Not sold when created
+		this.priceSold = 0.0;  // Initialize to zero
+		this.profit = 0.0;  // Initialize to zero
 	}
 
-	// Accessors with minor JavaDoc comments.
-	/** @return Car ID */
+	/**
+	 * @return Car ID
+	 */
 	public String getID() { return this.id; }
 
-	/** @return Mileage */
+	/**
+	 * @return Mileage of the car
+	 */
 	public int getMileage() { return this.mileage; }
 
-	/** @return MPG */
-	public int getMpg() { return this.mpg; }
+	/**
+	 * @return Miles per gallon of the car
+	 */
+	public int getMPG() { return this.mpg; }
 
-	/** @return Cost */
+	/**
+	 * @return Cost of the car
+	 */
 	public double getCost() { return this.cost; }
 
-	/** @return Sold status */
+	/**
+	 * @return Selling price of the car
+	 */
+	public double getSalesPrice() { return this.salesPrice; }
+
+	/**
+	 * @return True if the car is sold, false otherwise
+	 */
 	public boolean isSold() { return this.sold; }
 
-	/** @return Sold price */
+	/**
+	 * @return Price the car was sold for
+	 */
 	public double getPriceSold() { return this.priceSold; }
 
-	/** @return Profit */
+	/**
+	 * @return Profit made from selling the car
+	 */
 	public double getProfit() { return this.profit; }
 
 	/**
@@ -67,7 +95,6 @@ public class Car {
 				priceSold + ", Profit: " + profit;
 	}
 
-	// Comparison methods
 	/**
 	 * Compare cars based on MPG.
 	 * @param otherCar Car to compare against
@@ -95,36 +122,14 @@ public class Car {
 		return Double.compare(this.salesPrice, otherCar.salesPrice);
 	}
 
-	// Mutators
 	/**
-	 * Sets the ID of the car.
-	 * @param id New ID
-	 */
-	public void setID(String id) { this.id = id; }
-
-	/**
-	 * Sets the mileage of the car.
-	 * @param mileage New mileage
-	 */
-	public void setMileage(int mileage) { this.mileage = mileage; }
-
-	/**
-	 * Sets the MPG of the car.
-	 * @param mpg New MPG
-	 */
-	public void setMpg(int mpg) { this.mpg = mpg; }
-
-	/**
-	 * Sets the cost of the car.
-	 * @param cost New cost
-	 */
-	public void setCost(double cost) { this.cost = cost; }
-
-	/**
-	 * Sells the car.
+	 * Sells the car. Calculates the profit and updates the status.
 	 * @param priceSold Price for which the car was sold
 	 */
 	public void sellCar(double priceSold) {
+		if(priceSold < 0) {
+			throw new IllegalArgumentException("Price sold cannot be negative");
+		}
 		this.sold = true;
 		this.priceSold = priceSold;
 		this.profit = this.priceSold - this.cost;
