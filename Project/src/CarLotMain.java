@@ -60,7 +60,8 @@ public class CarLotMain {
 					input.next(); }
 		} while (option != 0);
 			input.close();
-			
+
+		
 			}
 }
 	
