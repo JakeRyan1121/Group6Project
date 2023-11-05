@@ -26,7 +26,35 @@ public class CarLotMain {
 				if (option == 0) {
 					System.out.println("Exiting. Goodbye");
 				}
-					 else if (option >=1 && option <= 8) {
+			    else if (option == 1) {
+					System.out.println("You selected Option " + option);
+					System.out.println("Press any key and hit ENTER to continue.");
+					input.next(); }
+			    else if (option == 2) {
+					System.out.println("You selected Option " + option);
+					System.out.println("Press any key and hit ENTER to continue.");
+					input.next(); }
+			    else if (option == 3) {
+					System.out.println("You selected Option " + option);
+					System.out.println("Press any key and hit ENTER to continue.");
+					input.next(); }
+			    else if (option == 4) {
+					System.out.println("You selected Option " + option);
+					System.out.println("Press any key and hit ENTER to continue.");
+					input.next(); }
+			    else if (option == 5) {
+					System.out.println("You selected Option " + option);
+					System.out.println("Press any key and hit ENTER to continue.");
+					input.next(); }
+			    else if (option == 6) {
+					System.out.println("You selected Option " + option);
+					System.out.println("Press any key and hit ENTER to continue.");
+					input.next(); }
+			    else if (option == 7) {
+					System.out.println("You selected Option " + option);
+					System.out.println("Press any key and hit ENTER to continue.");
+					input.next(); }
+			    else if (option == 8) {
 					System.out.println("You selected Option " + option);
 					System.out.println("Press any key and hit ENTER to continue.");
 					input.next(); }
