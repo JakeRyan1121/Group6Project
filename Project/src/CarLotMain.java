@@ -27,9 +27,12 @@ public class CarLotMain {
 					System.out.println("Exiting. Goodbye");
 				}
 					 else if (option >=1 && option <= 8) {
-					System.out.println("You selected Option " + option + "\nPress any key and then enter to continue");}
+					System.out.println("You selected Option " + option);
+					System.out.println("Press any key and hit ENTER to continue.");
+					input.next(); }
 		} while (option != 0);
 			input.close();
 			
-		}
-	}
+			}
+}
+	
