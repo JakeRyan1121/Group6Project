@@ -121,6 +121,69 @@ public class Car {
 	public int comparePrice(Car otherCar) {
 		return Double.compare(this.salesPrice, otherCar.salesPrice);
 	}
+	// Mutators
+	/**
+	 * Change ID
+	 * 
+	 * @param id
+	 */
+	public void setID(String id) {
+		this.id = id;
+	}
+	
+	/**
+	 * Change mileage
+	 * 
+	 * @param mileage
+	 */
+	public void setMileage(int mileage) {
+		this.mileage = mileage;
+	}
+	
+	/**
+	 * change MPG
+	 * 
+	 * @param mpg
+	 */
+	public void setMpg(int mpg) {
+		this.mpg = mpg;
+	}
+	
+	/**
+	 * Change Cost
+	 * 
+	 * @param cost
+	 */
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+	
+	/**
+	 * Change Sold Price
+	 * 
+	 * @param priceSold
+	 */
+	public void setPriceSold(double priceSold) {
+		this.priceSold = priceSold;
+	}
+	
+	/**
+	 * Change if the car has been sold
+	 * 
+	 * @param sold
+	 */
+	public void setSold(boolean sold) {
+		this.sold = sold;
+	}
+	
+	/**
+	 * Change Profit
+	 * 
+	 * @param profit
+	 */
+	public void setProfit(double profit) {
+		this.profit = profit;
+	}
 
 	/**
 	 * Sells the car. Calculates the profit and updates the status.
@@ -134,4 +197,5 @@ public class Car {
 		this.priceSold = priceSold;
 		this.profit = this.priceSold - this.cost;
 	}
+	
 }
