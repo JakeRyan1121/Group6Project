@@ -26,6 +26,8 @@ public class CarLotMain {
             System.out.println("[6] Display car with the highest mileage");
             System.out.println("[7] Display overall MPG for the entire inventory");
             System.out.println("[8] Display profit for all sold cars");
+            System.out.println("[9] Save current Data to Disk");
+            System.out.println("[10] Load Data from Disk");
 
             System.out.print("Enter a number from 0 to 8: ");
             option = input.nextInt();
@@ -79,8 +81,14 @@ public class CarLotMain {
                 // Display profit for all sold cars
                 double totalProfit = carLot.getTotalProfit();
                 System.out.println("Total profit for all sold cars: $" + totalProfit);
+            } else if (option == 9) {
+                carLot.saveToDisk()
+                System.out.println("Data Saved") 
+            } else if (option == 10) {
+                carLot.loadFromDisk()
+                System.out.println("Data Loaded")
             } else {
-                System.out.println("Invalid option. Please enter a number from 0 to 8.");
+                System.out.println("Invalid option. Please enter a number from 0 to 10.");
             }
 
             if (option != 0) {
