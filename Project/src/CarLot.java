@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.io.File;
 
 /**
  * Represents a CarLot with an inventory of Cars.
@@ -114,4 +115,6 @@ public class CarLot {
         }
         carToSell.sellCar(priceSold);
     }
+    public void saveToDisk() {
+        
 }
