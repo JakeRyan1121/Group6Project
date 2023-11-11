@@ -115,6 +115,69 @@ public class CarLot {
         }
         carToSell.sellCar(priceSold);
     }
-    public void saveToDisk() {
+    /**
+     * Will save CarLot Array to the file carlot.txt
+     * 
+     * @throws FileNotFoundException
+     */
+    public void saveToDisk() throws FileNotFoundException {
+    	File file = new File("carlot.txt");
+    	PrintWriter data = new PrintWriter(file);
+    	for (int i = 0; i < inventory.size() - 1; i++) {
+    		data.println(inventory.get(i).getID());
+    		data.print("mileage: ");
+    		data.println(inventory.get(i).getMileage());
+    		data.print("MPG: ");
+    		data.println(inventory.get(i).getMPG());
+    		data.print("Cost: ");
+    		data.println(inventory.get(i).getCost());
+    		data.print("Is it Sold: ");
+    		data.println(inventory.get(i).isSold());
+    		data.print("Sold Price: ");
+    		data.println(inventory.get(i).getPriceSold());
+    		data.print("Profit: ");
+    		data.println(inventory.get(i).getProfit());
+    		data.println("");
+    	}
+    	data.close();
+    	
+    }
+    
+    /**
+     * Will load data into CarLot inventory array from the carlot.txt file
+     * 
+     * @throws FileNotFoundException
+     */
+    public void loadFromDisk() throws FileNotFoundException {
+    	Scanner input = new Scanner(new File("carlot.txt"));
+    	while(input.hasNext()) {
+    		String ID = input.nextLine();
+        	double priceSold = 0.0;
+        	double profit = 0.0;
+        	int mileage = input.nextInt();
+        	int mpg = input.nextInt();
+        	double cost = input.nextDouble();
+        	double salesPrice = input.nextDouble();
+        	boolean sold = input.nextBoolean();
+        	if (sold = false) {
+        		input.nextLine();
+        		input.nextLine();
+        		input.nextLine();
+        	}
+        	else {
+        		priceSold = input.nextDouble();
+        		profit = input.nextDouble();
+        		input.nextLine();
+        	}
+        	
+        	Car car = new  Car(ID, mileage, mpg, cost, salesPrice);
+        	car.setSold(sold);
+        	car.setProfit(profit);
+        	car.setPriceSold(priceSold);
+        	this.inventory.add(car);
+    	}
+    	input.close();
+    }
+        
         
 }
