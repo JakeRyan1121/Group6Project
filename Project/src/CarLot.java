@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 /**
  * Represents a CarLot with an inventory of Cars.
@@ -121,9 +124,8 @@ public class CarLot {
      * @throws FileNotFoundException
      */
     public void saveToDisk() throws FileNotFoundException {
-    	File file = new File("carlot.txt");
-    	PrintWriter data = new PrintWriter(file);
-    	for (int i = 0; i < inventory.size() - 1; i++) {
+    	PrintWriter data = new PrintWriter("carlot.txt");
+    	for (int i = 0; i < inventory.size(); i++) {
     		data.println(inventory.get(i).getID());
     		data.print("mileage: ");
     		data.println(inventory.get(i).getMileage());
@@ -131,9 +133,11 @@ public class CarLot {
     		data.println(inventory.get(i).getMPG());
     		data.print("Cost: ");
     		data.println(inventory.get(i).getCost());
-    		data.print("Is it Sold: ");
+    		data.print("Sales_Price: ");
+    		data.println(inventory.get(i).getSalesPrice());
+    		data.print("Is_it_Sold: ");
     		data.println(inventory.get(i).isSold());
-    		data.print("Sold Price: ");
+    		data.print("Sold_Price: ");
     		data.println(inventory.get(i).getPriceSold());
     		data.print("Profit: ");
     		data.println(inventory.get(i).getProfit());
@@ -150,22 +154,31 @@ public class CarLot {
      */
     public void loadFromDisk() throws FileNotFoundException {
     	Scanner input = new Scanner(new File("carlot.txt"));
+    	double priceSold;
+    	double profit;
     	while(input.hasNext()) {
-    		String ID = input.nextLine();
-        	double priceSold = 0.0;
-        	double profit = 0.0;
+    		String ID = input.next();
+    		input.next();
         	int mileage = input.nextInt();
+        	input.next();
         	int mpg = input.nextInt();
+        	input.next();
         	double cost = input.nextDouble();
+        	input.next();
         	double salesPrice = input.nextDouble();
+        	input.next();
         	boolean sold = input.nextBoolean();
         	if (sold = false) {
+        		priceSold = 0.0;
+        		profit = 0.0;
         		input.nextLine();
         		input.nextLine();
         		input.nextLine();
         	}
         	else {
+        		input.next();
         		priceSold = input.nextDouble();
+        		input.next();
         		profit = input.nextDouble();
         		input.nextLine();
         	}
