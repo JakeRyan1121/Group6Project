@@ -91,7 +91,7 @@ public class CarLot {
     public double getTotalProfit() {
         double totalProfit = 0;
         for (Car car : inventory) {
-            totalProfit += (car.getSalesPrice() - car.getCost());
+            totalProfit += (car.PriceSold() - car.getCost());
         }
         return totalProfit;
     }
