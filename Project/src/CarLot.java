@@ -47,7 +47,7 @@ public class CarLot {
      */
     public ArrayList<Car> getCarsSortedByMPG() {
         ArrayList<Car> sortedInventory = new ArrayList<>(inventory);
-        Collections.sort(sortedInventory, (a, b) -> a.compareMPG(b));
+        Collections.sort(sortedInventory, (a, b) -> b.compareMPG(a));
         return sortedInventory;
     }
 
