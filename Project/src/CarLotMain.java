@@ -24,7 +24,7 @@ public class CarLotMain {
             System.out.println("[4] List inventory from Best MPG to Worst MPG");
             System.out.println("[5] Display car with Best MPG");
             System.out.println("[6] Display car with the highest mileage");
-            System.out.println("[7] Display overall MPG for the entire inventory");
+            System.out.println("[7] Display average MPG of the entire inventory");
             System.out.println("[8] Display profit for all sold cars");
             System.out.println("[9] Save current Data to Disk");
             System.out.println("[10] Load Data from Disk");
@@ -43,7 +43,7 @@ public class CarLotMain {
                 // Sells a car from inventory
                 System.out.print("Enter the car identifier to sell: ");
                 String identifier = input.next();
-                System.out.print("Enter the selling price: ");
+                System.out.print("Enter how much it was sold for: ");
                 double priceSold = input.nextDouble();
                 try {
                     carLot.sellCar(identifier, priceSold);
