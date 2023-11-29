@@ -5,6 +5,20 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+class Vehicle {
+    private String ID;
+    private int mileage;
+    private int MPG;
+    private double cost;
+    private double salesPrice;
+    private boolean sold;
+    private double priceSold;
+    private double profit;
+
+    class Car extends Vehicle {
+    // Car-specific methods and properties go here
+}
+    
 /**
  * Represents a CarLot with an inventory of Cars.
  */
