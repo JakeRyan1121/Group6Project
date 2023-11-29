@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -90,7 +92,12 @@ public class CarLotMain {
             } else {
                 System.out.println("Invalid option. Please enter a number from 0 to 10.");
             }
-
+        } catch (FileNotFoundException e) {
+                System.out.println("Error: File not found - " + e.getMessage());
+        }
+          catch (InputMismatchException e) {
+            	System.out.println("Error: Invalid Input");
+              }
             if (option != 0) {
                 System.out.print("Press any key and hit ENTER to continue.");
                 input.next();
