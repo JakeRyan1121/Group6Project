@@ -182,7 +182,8 @@ public class CarLot {
         		profit = input.nextDouble();
         		input.nextLine();
         	}
-        	
+
+            
         	Car car = new  Car(ID, mileage, mpg, cost, salesPrice);
         	car.setSold(sold);
         	car.setProfit(profit);
