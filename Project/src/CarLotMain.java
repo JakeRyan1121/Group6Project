@@ -1,3 +1,4 @@
+package carlot;
 import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -140,3 +141,4 @@ public class CarLotMain {
             System.out.println(car);
         }
     }
+}
