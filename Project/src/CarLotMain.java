@@ -17,8 +17,9 @@ public class CarLotMain {
         Scanner input = new Scanner(System.in);
         CarLot carLot = new CarLot(); // Initializes the car lot
 
-        int option;
+        int option = 0;
         do {
+        	try {
             // Displays the menu options
             System.out.println("[0] Exit");
             System.out.println("[1] Add a car to inventory");
@@ -35,7 +36,6 @@ public class CarLotMain {
             System.out.print("Enter a number from 0 to 10: ");
             option = input.nextInt();
 
-            try {
                 if (option == 0) {
                     System.out.println("Exiting. Goodbye");
                 } else if (option == 1) {
@@ -94,12 +94,15 @@ public class CarLotMain {
                 } else {
                     System.out.println("Invalid option. Please enter a number from 0 to 10.");
                 }
-            } catch (FileNotFoundException e) {
+            } 
+            
+            catch (InputMismatchException ex) {
+            	System.out.println("Error: Number entered not between 1 and 10 Exiting");
+            }
+            
+            catch (FileNotFoundException e) {
                 System.out.println("Error: File not found - " + e.getMessage());
             }
-              catch (InputMismatchException e) {
-            	System.out.println("Error: Invalid Input");
-              }
             if (option != 0) {
                 System.out.print("Press any key and hit ENTER to continue.");
                 input.next();
