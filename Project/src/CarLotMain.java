@@ -84,11 +84,11 @@ public class CarLotMain {
                 double totalProfit = carLot.getTotalProfit();
                 System.out.println("Total profit for all sold cars: $" + totalProfit);
             } else if (option == 9) {
-                carLot.saveToDisk()
-                System.out.println("Data Saved") 
+                carLot.saveToDisk();
+                System.out.println("Data Saved"); 
             } else if (option == 10) {
-                carLot.loadFromDisk()
-                System.out.println("Data Loaded")
+                carLot.loadFromDisk();
+                System.out.println("Data Loaded");
             } else {
                 System.out.println("Invalid option. Please enter a number from 0 to 10.");
             }
